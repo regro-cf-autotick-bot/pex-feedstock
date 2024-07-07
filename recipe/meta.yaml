@@ -1,5 +1,5 @@
 {% set name = "pex" %}
-{% set version = "2.7.0" %}
+{% set version = "2.8.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/pex-{{ version }}.tar.gz
-  sha256: b4bf91a1ed861d2566ead2312165c8e9e93cace30df00936f977b979b9f8f7b1
+  sha256: 1fd93a9016eba9349bfc79e8134a939cce26b1d2837aafed9a76f7304c58983a
 
 build:
   entry_points:
@@ -24,6 +24,16 @@ requirements:
     - hatchling
     - pip
   run:
+    - ansicolors
+    - coloredlogs
+    - cryptography
+    - genshi
+    - hatchling
+    - httpx
+    - lxml
+    - pyopenssl
+    - pyyaml
+    - redbaron
     - python >=3.8
     - __unix  # [unix]
     - __win   # [win]
