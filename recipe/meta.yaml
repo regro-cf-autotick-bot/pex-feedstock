@@ -1,5 +1,5 @@
 {% set name = "pex" %}
-{% set version = "2.23.0" %}
+{% set version = "2.24.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/pex-{{ version }}.tar.gz
-  sha256: 8f35b15b1f0439bd9085dec23a741626ea499a5986c0c0660ced3510e883380d
+  sha256: 6661f1c2e48ffcd7ea181111ec85bf811a421df76fd6918dc71202fea6f30171
 
 build:
   entry_points:
