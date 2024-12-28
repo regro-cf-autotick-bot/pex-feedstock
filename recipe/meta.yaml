@@ -6,7 +6,7 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/pex-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/pex-{{ version }}.tar.gz
   sha256: 6661f1c2e48ffcd7ea181111ec85bf811a421df76fd6918dc71202fea6f30171
 
 build:
@@ -16,11 +16,11 @@ build:
     - pex-tools = pex.tools.main:main
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 0
+  number: 1
 
 requirements:
   host:
-    - python >=3.8
+    - python {{ python_min }}
     - hatchling
     - pip
   run:
@@ -36,7 +36,7 @@ requirements:
     - pyopenssl
     - pyyaml
     - redbaron
-    - python >=3.8
+    - python >={{ python_min }}
     - __unix  # [unix]
     - __win   # [win]
 
@@ -50,6 +50,7 @@ test:
     - pex-tools --help
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   home: https://github.com/pex-tool/pex
